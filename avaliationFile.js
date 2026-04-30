@@ -1,36 +1,57 @@
-/*
+
 const ask = require("readline-sync")
 
-let nome = ask.question("Qual o seu nome:")
-let idade = ask.question("Qual sua idade:")
-let cidade = ask.question("Qual sua cidade; ")
-let hobbies = ask.question("Qual são os seus hobbies: ")
-
-dados = [nome, idade, cidade, hobbies]
-*/
+// primeira Parte:
 function guy(nome, idade, cidade, hobbies){
-    dados = [nome, idade,  cidade, hobbies]
-    return dados
-    
+    // usuario = [nome, idade, cidade]
+    // hobbies = [hobbies]
+    // usuario.push(hobbies)
+    // return usuario
+    return [nome, idade, cidade, hobbies]
 }
 
-function formatarHobbies(hobbies){
-    hobbies = ["música", "jogos", "futebol"]
-    hobbies.join()
+
+// Segunda Parte:
+
+
+//refazer - receber um array por parametro e retornar este array formatado como uma string
+function formatarHobbies(hobbies){    
+    hobbies.sort()
     return hobbies
 }
-    
-gerarDescricao(usuario){
-    descricao = console.log("${usario[1]} tem ${usuario[2]} anos, mora em ${usuario[4]} e gosta de: [usuario[4]]")
-}
+
+// Terceira Parte:
+usuario = ["Lohan", "16", "São leo", "jogos"]
+
+function gerarDescricao(usuario){
+    console.log(`${usuario[0]} tem ${usuario[1]} anos, mora em ${usuario[2]} e gosta de: ${usuario[3]}`)
+ }
+
+// Quarta Parte:
 
 const usuarios = []
-adicionarUsuario(usuarios, usuario){
-    
+
+function adicionarUsuario(usuarios, usuario){
+    usuarios.push(usuario)
+    return usuarios 
+ }
+adicionarUsuario(usuarios, usuario)
+
+function gerarRelatorio(usuarios){
+    relatorio = usuarios.length
+    return relatorio
 }
-
-console.log(guy(formatarHobbies(hobbies)))
-
+gerarRelatorio(usuarios)
 
 
 
+
+
+//--------------------------------------------------------------
+console.log(guy("Lohan", "16", "São leo", ['jogos', 'comida', 'futebol']))
+
+console.log(formatarHobbies(hobbies))
+
+gerarDescricao(usuario)
+
+console.log(`Total de usuários:${relatorio}`)
