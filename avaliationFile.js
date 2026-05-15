@@ -1,42 +1,68 @@
-const ask = require("readline-sync")
-function createUser(nome, idade, cidade, hobbies){
-    return [nome, idade, cidade, hobbies];
+const ask = require('readline-sync')
+// let produtos = []
+
+// function cadastrarProduto(id, nome, preco, verificationprice, estoque){
+    
+//     produtos.push(id, nome, preco, verificationprice, estoque)
+// }
+
+// function buscarProdutoPorId(){
+
+// }
+
+// function buscarProdutoPorNome(){
+
+// }
+// function mostrarProdutos(){
+
+// }
+
+
+
+function cadastrarAluno(aluno, notas, media, situacao){
+    alunogeral = [aluno, notas, media, situacao]
+    regist.push(alunogeral)
+    return    
+}
+()
+function calcularMedia(nota1, nota2, nota3){
+    resultadonota = (nota1 + nota2 + nota3) /3
+    return resultadonota
 }
 
-function formatarHobbies(hobbies){
-    return hobbies.slice(0, -1).join (', ') + ' e ' + hobbies.slice(-1)
+function verificarSituacao(result){
+    if (result => 7){
+    return "Aprovado"
+
+   }  else if ((result >= 5) && (result< 7)){
+    return "Recuperação"
+
+   } else {
+    return "Reprovado"
+   }
+   
+}
+function mostrarAlunos(idk){
     
 }
 
-function gerarDescricao(usuario){
-    return `${usuario[0]} tem em ${user1[1]} anos, mora em ${user1[2]} e gosta de fazer: ${user1[3]} e gosta de 
-    ${formatarHobbies(usuario[3])} `
-}
+function sistema(number){
+    switch (number) {
+        case '1':
+            let name = ask.question("Qual é o seu nome? ")
+            let note1 = Number(ask.question("Qual é a sua primeira nota? "))
+            let note2 = Number(ask.question("Qual é a sua segunda nota? "))
+            let note3 = Number(ask.question("Qual é a sua terceira nota? "))
+            calcularMedia(note1, note2, note3)
+            break
+            case '2':
+            return `${regist}`
+            break
+        }
+}   
 
-function adicionarUsuario(usuarios, usuario){
-    let usuarioAtualizado = [...usuarios, usuario]
-    return usuarioAtualizado
-}
+let regist = []
 
-function gerarRelatorio(usuarios){
-    return `Total de usuarios: ${usuarios.length}`
-}
-
-
-
-
-
-// ---------------------------------------------------------------------------------
-let usuarios = []
-
-
-let user1 = createUser('Lohan', 16, 'Sao Leo', ['futebol', 'video games', 'series'])
-usuarios = adicionarUsuario(usuarios, user1)
-//--------------------------------------------------------------------
-console.log(user1)
-console.log(formatarHobbies(user1[3]))
-console.log(gerarDescricao(user1))
-console.log(gerarDescricao(user1))
-console.log(gerarRelatorio(usuarios))
-
-
+let show = ask.question(`O que você quer fazer?
+1 - Cadastrar o usuario
+2 - ver os usuarios`)
