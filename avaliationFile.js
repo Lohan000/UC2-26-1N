@@ -1,32 +1,16 @@
 const ask = require('readline-sync')
-// let produtos = []
-
-// function cadastrarProduto(id, nome, preco, verificationprice, estoque){
-    
-//     produtos.push(id, nome, preco, verificationprice, estoque)
-// }
-
-// function buscarProdutoPorId(){
-
-// }
-
-// function buscarProdutoPorNome(){
-
-// }
-// function mostrarProdutos(){
-
-// }
-
-
+let registerusers = []
 
 function cadastrarAluno(aluno, notas, media, situacao){
-    alunogeral = [aluno, notas, media, situacao]
-    regist.push(alunogeral)
+        user = [aluno, notas, media, situacao]
+        console.log(`Aluno: ${aluno} adicionado`)
+        registerusers.push(user)
     return    
 }
-()
+
 function calcularMedia(nota1, nota2, nota3){
     resultadonota = (nota1 + nota2 + nota3) /3
+    console.log(resultadonota)
     return resultadonota
 }
 
@@ -42,27 +26,41 @@ function verificarSituacao(result){
    }
    
 }
-function mostrarAlunos(idk){
-    
+function mostrarAlunos(array){
+    console.log(array)
 }
 
 function sistema(number){
     switch (number) {
         case '1':
+            console.clear()
             let name = ask.question("Qual é o seu nome? ")
             let note1 = Number(ask.question("Qual é a sua primeira nota? "))
             let note2 = Number(ask.question("Qual é a sua segunda nota? "))
             let note3 = Number(ask.question("Qual é a sua terceira nota? "))
-            calcularMedia(note1, note2, note3)
+            let notasgerais = `${note1}, ${note2}, ${note3}`
+            console.log(notasgerais)
+            let media = calcularMedia(note1, note2, note3)
+            console.log(media)
+            let situaçao = verificarSituacao(media)
+            cadastrarAluno(name,notasgerais,media,situaçao )
             break
             case '2':
-            return `${regist}`
+            mostrarAlunos(regist)
             break
         }
 }   
 
-let regist = []
-
-let show = ask.question(`O que você quer fazer?
+function main(){
+    while (true){
+    show = ask.question(`O que voce quer fazer?
 1 - Cadastrar o usuario
-2 - ver os usuarios`)
+2 - Ver os usuarios
+3 - encerrar o sistema`)
+    sistema(show)
+
+}
+
+}
+
+main()
